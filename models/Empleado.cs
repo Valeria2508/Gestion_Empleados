@@ -17,7 +17,7 @@ namespace Gestion_Empleados.models
 
         public Empleado(string nombre, string apellido, string numeroDeDocumento, byte edad, string posicion, double salario)
         {
-            Id  = Guid.NewGuid();
+            Id = Guid.NewGuid();
             Nombre = nombre;
             Apellido = apellido;
             NumeroDeIdentificacion = numeroDeDocumento;
@@ -26,6 +26,10 @@ namespace Gestion_Empleados.models
             Salario = salario;
         }
 
-        
+        private double CalcularBonificacion(){
+            var Bonificacion = Salario * 0.01;
+            var SalarioBonificacion = Bonificacion + Salario;
+            return SalarioBonificacion;
+        }
     }
 }
