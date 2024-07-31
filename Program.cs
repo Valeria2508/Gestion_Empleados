@@ -21,9 +21,9 @@ while (!exit)
         case "2":
             empresa1.MostrarTodosLosEmpleados();
             break;
-        // case "3":
-        //     empresaSystem.Update();
-        //     break;
+        case "3":
+            empresa1.ActualizarEmpleado();
+            break;
         // case "4":
         //     empresaSystem.Delete();
         //     break;

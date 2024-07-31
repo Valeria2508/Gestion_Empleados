@@ -42,6 +42,82 @@ namespace Gestion_Empleados.models
             }
         }
 
+        public void ActualizarEmpleado()
+        {
+            Console.WriteLine("Ingresa el nombre del empleado a actualizar");
+            string? NombreBuscar = Console.ReadLine();
+            var empleadoToUpdate = ListaEmpleados.Where(c => c.Nombre == NombreBuscar).ToList();
+            if (empleadoToUpdate.Any())// any quiere decir si es deiferente de null
+            {
+                foreach (var empleado in empleadoToUpdate)
+                {
+                    Console.WriteLine($"Actualizando empleado con ID: {empleado.Id}");
+
+                    Console.WriteLine("¿Qué dato desea actualizar?");
+                    Console.WriteLine("1. Nombre");
+                    Console.WriteLine("2. Apellido");
+                    Console.WriteLine("3. Numero documento");
+                    Console.WriteLine("4. Edad");
+                    Console.WriteLine("5. Posicion");
+                    Console.WriteLine("6. Salario");
+                    Console.WriteLine("7. Todos los datos");
+
+                    var option = Console.ReadLine();
+
+                    switch (option)
+                    {
+                        case "1":
+                            Console.WriteLine("Ingrese el nuevo nombre:");
+                            empleado.Nombre = Console.ReadLine();
+                            break;
+                        case "2":
+                            Console.WriteLine("Ingrese el nuevo apellido:");
+                            empleado.Apellido = Console.ReadLine();
+                            break;
+                        case "3":
+                            Console.WriteLine("Ingrese el nuevo Documento:");
+                            empleado.NumeroDeIdentificacion = Console.ReadLine();
+                            break;
+                        case "4":
+                            Console.WriteLine("Ingrese el nuevo edad:");
+                            empleado.Edad = Convert.ToByte(Console.ReadLine());
+                            break;
+                        case "5":
+                            Console.WriteLine("Ingrese el nuevo posicion:");
+                            empleado.Posicion = Console.ReadLine();
+                            break;
+                        case "6":
+                            Console.WriteLine("Ingrese el nuevo salario:");
+                            empleado.Salario = Convert.ToDouble(Console.ReadLine());
+                            break;
+                        case "7":
+                            Console.WriteLine("Ingrese el nuevo nombre:");
+                            empleado.Nombre = Console.ReadLine();
+                            Console.WriteLine("Ingrese el nuevo apellido:");
+                            empleado.Apellido = Console.ReadLine();
+                            Console.WriteLine("Ingrese el nuevo email:");
+                            empleado.NumeroDeIdentificacion = Console.ReadLine();
+                            Console.WriteLine("Ingrese el nuevo teléfono:");
+                            empleado.Edad = Convert.ToByte(Console.ReadLine());
+                            Console.WriteLine("Ingrese el nuevo posicion:");
+                            empleado.Posicion = Console.ReadLine();
+                            Console.WriteLine("Ingrese el nuevo salario:");
+                            empleado.Salario = Convert.ToDouble(Console.ReadLine());
+                            break;
+                        default:
+                            Console.WriteLine("Opción no válida.");
+                            break;
+                    }
+                }
+
+                Console.WriteLine($"{empleadoToUpdate.Count} Empleado(s) actualizado(s) exitosamente.");
+            }
+            else
+            {
+                Console.WriteLine("Empleado no encontrado.");
+            }
+        }
+
         
 
     }
