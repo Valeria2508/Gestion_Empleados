@@ -9,6 +9,8 @@ namespace Gestion_Empleados.models
     {
         public string? Nombre {get; set;}
         public string? Direccion {get; set;}
-        public 
+        public List<Empleado> ListaEmpleados {get; set;} = new List<Empleado>();
+
+        
     }
 }
