@@ -133,11 +133,8 @@ namespace Gestion_Empleados.models
             }
         }
 
-        public void BuscarEmpleado(string NumeroDeIdentificacion){
-            Console.WriteLine("Ingrese el numero de documento del empleado a buscar");
-            string? empleadoABuscar = Console.ReadLine();
-            var empleadoFind = ListaEmpleados.Find(e => e.NumeroDeIdentificacion == empleadoABuscar);
-
+        public void BuscarEmpleado(string numeroDeIdentificacion){// si ingreso parametros, no pido los datos
+            var empleadoFind = ListaEmpleados.Find(e => e.NumeroDeIdentificacion == numeroDeIdentificacion);
             if (empleadoFind != null)
             {
                 empleadoFind.MostrarInformacion();
@@ -147,7 +144,16 @@ namespace Gestion_Empleados.models
             }
         }
 
+        public void MostrarEmpleadosPorCargo(string posicion){
+            var empleadoCargo = ListaEmpleados.Find(e => e.Posicion == posicion.ToLower());
 
-
+            if (empleadoCargo != null)
+            {
+                empleadoCargo.MostrarInformacion();
+            }else
+            {
+                Console.WriteLine("el empleado no existe");
+            }
+        }
     }
 }
