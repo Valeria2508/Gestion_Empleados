@@ -120,16 +120,34 @@ namespace Gestion_Empleados.models
 
         public void EliminarEmpleado(){
             Console.WriteLine("Ingrese el numero de ID del empleado a eliminar");
-            string? IDBuscar = Console.ReadLine();
+            string? IDBuscar = Console.ReadLine(); // guarda el id que se ingreso
+            // busca en la lista de empleados el empleado con el id buscado y lo guarda en la coleccion empleadoToDelete
             var empleadoToDelete = ListaEmpleados.Where(c => c.NumeroDeIdentificacion == IDBuscar).ToList();
+
             if (empleadoToDelete.Any())// any quiere decir si es deiferente de null
             {
                 foreach (var empleado in empleadoToDelete) // la coleccion e este caso es empleadoToDelete que es donde esta toda la info del empleado que se quiere elimianr
                 {
-                    ListaEmpleados.Remove(empleado);
+                    ListaEmpleados.Remove(empleado);//elimina el empleado de la lista
                 }
             }
         }
+
+        public void BuscarEmpleado(string NumeroDeIdentificacion){
+            Console.WriteLine("Ingrese el numero de documento del empleado a buscar");
+            string? empleadoABuscar = Console.ReadLine();
+            var empleadoFind = ListaEmpleados.Find(e => e.NumeroDeIdentificacion == empleadoABuscar);
+
+            if (empleadoFind != null)
+            {
+                empleadoFind.MostrarInformacion();
+            }else
+            {
+                Console.WriteLine("el empleado no existe");
+            }
+        }
+
+
 
     }
 }

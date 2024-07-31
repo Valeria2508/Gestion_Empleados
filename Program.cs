@@ -9,7 +9,8 @@ while (!exit)
     Console.WriteLine("2. Leer todos los Empleados");
     Console.WriteLine("3. Actualizar un Empleado");
     Console.WriteLine("4. Eliminar un Empleado");
-    Console.WriteLine("5. Salir");
+    Console.WriteLine("5. Buscar un Empleado");
+    Console.WriteLine("6. Salir");
 
     var option = Console.ReadLine();
 
@@ -24,16 +25,20 @@ while (!exit)
         case "3":
             empresa1.ActualizarEmpleado();
             break;
-        // case "4":
-        //     empresaSystem.Delete();
-        //     break;
-        // case "5":
-        //     exit = true;
-        //     break;
+        case "4":
+            empresa1.EliminarEmpleado();
+            Console.WriteLine("El empleado se elimino con exito");
+            break;
+        case"5":
+            empresa1.BuscarEmpleado();
+            break;
+        case "6":
+            exit = true;
+            break;
         default:
             Console.WriteLine("Opción no válida. Por favor, intente de nuevo.");
             break;
     }
 
-    
+
 }
