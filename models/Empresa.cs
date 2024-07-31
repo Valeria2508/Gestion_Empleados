@@ -118,7 +118,18 @@ namespace Gestion_Empleados.models
             }
         }
 
-        
+        public void EliminarEmpleado(){
+            Console.WriteLine("Ingrese el numero de ID del empleado a eliminar");
+            string? IDBuscar = Console.ReadLine();
+            var empleadoToDelete = ListaEmpleados.Where(c => c.NumeroDeIdentificacion == IDBuscar).ToList();
+            if (empleadoToDelete.Any())// any quiere decir si es deiferente de null
+            {
+                foreach (var empleado in empleadoToDelete) // la coleccion e este caso es empleadoToDelete que es donde esta toda la info del empleado que se quiere elimianr
+                {
+                    ListaEmpleados.Remove(empleado);
+                }
+            }
+        }
 
     }
 }
