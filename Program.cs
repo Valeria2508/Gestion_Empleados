@@ -19,34 +19,41 @@ while (!exit)
     {
         case "1":
             empresa1.AgregarEmpleado(empresa1.PedirDatos());
+            empresa1.PausarMenu();
             break;
         case "2":
             empresa1.MostrarTodosLosEmpleados();
+            empresa1.PausarMenu();
             break;
         case "3":
             empresa1.ActualizarEmpleado();
+            empresa1.PausarMenu();
             break;
         case "4":
             empresa1.EliminarEmpleado();
             Console.WriteLine("El empleado se elimino con exito");
+            empresa1.PausarMenu();
             break;
         case"5":
             Console.WriteLine("Ingrese el número de identificación del empleado a buscar:");
             var documentoEncontrado = Console.ReadLine();
             Console.WriteLine("el empleado se encontro con la informacion");
             empresa1.BuscarEmpleado(documentoEncontrado);
+            empresa1.PausarMenu();
             break;
         case"6":
             Console.WriteLine("Ingrese el cargo del empleado a buscar:");
             var empleadoCargo = Console.ReadLine();
             Console.WriteLine("el empleado se encontro con la informacion");
             empresa1.MostrarEmpleadosPorCargo(empleadoCargo);
+            empresa1.PausarMenu();
             break;
         case "7":
             exit = true;
             break;
         default:
             Console.WriteLine("Opción no válida. Por favor, intente de nuevo.");
+            empresa1.PausarMenu();
             break;
     }
 

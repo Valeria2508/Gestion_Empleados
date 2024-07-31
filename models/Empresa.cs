@@ -118,7 +118,8 @@ namespace Gestion_Empleados.models
             }
         }
 
-        public void EliminarEmpleado(){
+        public void EliminarEmpleado()
+        {
             Console.WriteLine("Ingrese el numero de ID del empleado a eliminar");
             string? IDBuscar = Console.ReadLine(); // guarda el id que se ingreso
             // busca en la lista de empleados el empleado con el id buscado y lo guarda en la coleccion empleadoToDelete
@@ -133,27 +134,37 @@ namespace Gestion_Empleados.models
             }
         }
 
-        public void BuscarEmpleado(string numeroDeIdentificacion){// si ingreso parametros, no pido los datos
+        public void BuscarEmpleado(string numeroDeIdentificacion)
+        {// si ingreso parametros, no pido los datos
             var empleadoFind = ListaEmpleados.Find(e => e.NumeroDeIdentificacion == numeroDeIdentificacion);
             if (empleadoFind != null)
             {
                 empleadoFind.MostrarInformacion();
-            }else
+            }
+            else
             {
                 Console.WriteLine("el empleado no existe");
             }
         }
 
-        public void MostrarEmpleadosPorCargo(string posicion){
+        public void MostrarEmpleadosPorCargo(string posicion)
+        {
             var empleadoCargo = ListaEmpleados.Find(e => e.Posicion == posicion.ToLower());
 
             if (empleadoCargo != null)
             {
                 empleadoCargo.MostrarInformacion();
-            }else
+            }
+            else
             {
                 Console.WriteLine("el empleado no existe");
             }
+        }
+
+        public void PausarMenu() // generamos una pausa en el menú para mejorar la experiencia de usuario
+        {
+            Console.WriteLine("Presiona una tecla para continuar");
+            Console.ReadKey();
         }
     }
 }
