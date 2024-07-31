@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Valeria\\C#\\Gestion_Empleados\\Gestion_Empleados.csproj",
+      "projectUniqueName": "C:\\Users\\Valeria\\Desktop\\Gestion_Empleados\\Gestion_Empleados.csproj",
       "projectName": "Gestion_Empleados",
-      "projectPath": "C:\\Users\\Valeria\\C#\\Gestion_Empleados\\Gestion_Empleados.csproj",
+      "projectPath": "C:\\Users\\Valeria\\Desktop\\Gestion_Empleados\\Gestion_Empleados.csproj",
       "packagesPath": "C:\\Users\\Valeria\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Valeria\\C#\\Gestion_Empleados\\obj\\",
+      "outputPath": "C:\\Users\\Valeria\\Desktop\\Gestion_Empleados\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Valeria\\AppData\\Roaming\\NuGet\\NuGet.Config"

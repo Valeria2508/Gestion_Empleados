@@ -1,0 +1,15 @@
+C:\Users\Valeria\Desktop\Gestion_Empleados\bin\Debug\net8.0\Gestion_Empleados.exe
+C:\Users\Valeria\Desktop\Gestion_Empleados\bin\Debug\net8.0\Gestion_Empleados.deps.json
+C:\Users\Valeria\Desktop\Gestion_Empleados\bin\Debug\net8.0\Gestion_Empleados.runtimeconfig.json
+C:\Users\Valeria\Desktop\Gestion_Empleados\bin\Debug\net8.0\Gestion_Empleados.dll
+C:\Users\Valeria\Desktop\Gestion_Empleados\bin\Debug\net8.0\Gestion_Empleados.pdb
+C:\Users\Valeria\Desktop\Gestion_Empleados\obj\Debug\net8.0\Gestion_Empleados.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Valeria\Desktop\Gestion_Empleados\obj\Debug\net8.0\Gestion_Empleados.AssemblyInfoInputs.cache
+C:\Users\Valeria\Desktop\Gestion_Empleados\obj\Debug\net8.0\Gestion_Empleados.AssemblyInfo.cs
+C:\Users\Valeria\Desktop\Gestion_Empleados\obj\Debug\net8.0\Gestion_Empleados.csproj.CoreCompileInputs.cache
+C:\Users\Valeria\Desktop\Gestion_Empleados\obj\Debug\net8.0\Gestion_Empleados.sourcelink.json
+C:\Users\Valeria\Desktop\Gestion_Empleados\obj\Debug\net8.0\Gestion_Empleados.dll
+C:\Users\Valeria\Desktop\Gestion_Empleados\obj\Debug\net8.0\refint\Gestion_Empleados.dll
+C:\Users\Valeria\Desktop\Gestion_Empleados\obj\Debug\net8.0\Gestion_Empleados.pdb
+C:\Users\Valeria\Desktop\Gestion_Empleados\obj\Debug\net8.0\Gestion_Empleados.genruntimeconfig.cache
+C:\Users\Valeria\Desktop\Gestion_Empleados\obj\Debug\net8.0\ref\Gestion_Empleados.dll
