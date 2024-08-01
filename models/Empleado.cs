@@ -14,7 +14,6 @@ namespace Gestion_Empleados.models
 
         public Empleado(string nombre, string apellido, string numeroDeDocumento, byte edad, string posicion, double salario)
         {
-            
             Posicion = posicion;
             Salario = salario;
         }
@@ -25,13 +24,10 @@ namespace Gestion_Empleados.models
             return SalarioBonificacion;
         }
 
-        public void MostrarInformacion(){
+        // sobre escritura de metodos
+        public override void MostrarInformacion(){
+            base.MostrarInformacion();
             Console.WriteLine(@$"
-            Id: {Id}
-            Nombre: {Nombre}
-            Apellido: {Apellido}
-            Número de Identificación: {NumeroDeIdentificacion}
-            Edad: {Edad}
             Posición: {Posicion}
             Salario base: {Salario}
             Salario con Bonificación: {CalcularBonificacion()}
