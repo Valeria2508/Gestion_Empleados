@@ -25,23 +25,51 @@ namespace Gestion_Empleados.models
             Console.WriteLine("Ingrese el posicion del empleado: ");
             var posicion = Console.ReadLine();
             Console.WriteLine("Ingrese el salario del empleado: ");
-            var salario = Convert.ToDouble(Console.ReadLine());
+            var salario = Convert.ToDecimal(Console.ReadLine());
             var empleado1 = new Empleado(nombre, apellido, numid, edad, posicion, salario);
             return empleado1;
         }
 
-        
+        public Cliente PedirDatosCliente(){
+            Console.WriteLine("Ingrese el nombre del cliente: ");
+            var nombre = Console.ReadLine();
+            Console.WriteLine("Ingrese el apellido del cliente: ");
+            var apellido = Console.ReadLine();
+            Console.WriteLine("Ingrese el Numero de identificacion del cliente: ");
+            var numid = Console.ReadLine();
+            Console.WriteLine("Ingrese la edad del cliente: ");
+            var edad = Convert.ToByte(Console.ReadLine());
+            Console.WriteLine("Ingrese el Email del cliente: ");
+            var email = Console.ReadLine();
+            Console.WriteLine("Ingrese la Telefono del cliente: ");
+            var telefono = Console.ReadLine();
+            var cliente1 = new Cliente(nombre, apellido, numid, edad, email, telefono);
+            return cliente1;
+        }
 
         public void AgregarEmpleado(Empleado empleado)
         {
             ListaEmpleados.Add(empleado);
             Console.WriteLine("Se agrego el empleado con exito");
         }
+
+        public void AgregarCliente(Cliente cliente){
+            ListaClientes.Add(cliente);
+            Console.WriteLine("Se agrego el cliente con exito");
+        }
         public void MostrarTodosLosEmpleados()
         {
             foreach (var empleado in ListaEmpleados)
             {
                 empleado.MostrarInformacion();
+            }
+        }
+
+        public void MostrarTodosLosClientes()
+        {
+            foreach (var cliente in ListaClientes)
+            {
+                cliente.MostrarInformacion();
             }
         }
 
@@ -91,7 +119,7 @@ namespace Gestion_Empleados.models
                             break;
                         case "6":
                             Console.WriteLine("Ingrese el nuevo salario:");
-                            empleado.Salario = Convert.ToDouble(Console.ReadLine());
+                            empleado.Salario = Convert.ToDecimal(Console.ReadLine());
                             break;
                         case "7":
                             Console.WriteLine("Ingrese el nuevo nombre:");
@@ -105,7 +133,7 @@ namespace Gestion_Empleados.models
                             Console.WriteLine("Ingrese el nuevo posicion:");
                             empleado.Posicion = Console.ReadLine();
                             Console.WriteLine("Ingrese el nuevo salario:");
-                            empleado.Salario = Convert.ToDouble(Console.ReadLine());
+                            empleado.Salario = Convert.ToDecimal(Console.ReadLine());
                             break;
                         default:
                             Console.WriteLine("Opción no válida.");
@@ -136,6 +164,11 @@ namespace Gestion_Empleados.models
                 }
             }
         }
+
+        public void EliminarCliente(){
+            
+        }
+        
 
         public void BuscarEmpleado(string numeroDeIdentificacion)
         {// si ingreso parametros, no pido los datos

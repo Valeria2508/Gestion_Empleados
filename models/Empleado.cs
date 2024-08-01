@@ -9,17 +9,17 @@ namespace Gestion_Empleados.models
     {
         // atributos de empleado
         public string? Posicion { get; set; }
-        public double Salario { get; set; }
+        public decimal Salario { get; set; }
 
 
-        public Empleado(string nombre, string apellido, string numeroDeDocumento, byte edad, string posicion, double salario)
+        public Empleado(string nombre, string apellido, string numeroDeDocumento, byte edad, string posicion, decimal salario)
         {
             Posicion = posicion;
             Salario = salario;
         }
 
-        private double CalcularBonificacion(){
-            var Bonificacion = Salario * 0.01;
+        private decimal CalcularBonificacion(){
+            var Bonificacion = Salario * Convert.ToDecimal(0.01) ;
             var SalarioBonificacion = Bonificacion + Salario;
             return SalarioBonificacion;
         }
