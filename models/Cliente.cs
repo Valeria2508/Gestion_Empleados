@@ -11,16 +11,25 @@ namespace Gestion_Empleados.models
         public string? Telefono { get; set; }
 
 
-        public Cliente(string nombre, string apellido, string numeroDeDocumento, byte edad,string email, string telefono) : base()
+        public Cliente(string nombre, string apellido, string numeroDeDocumento, byte edad,string email, string telefono) 
         {
+            Id = Guid.NewGuid();  // generar un id unico para cada cliente
+            Nombre= nombre;
+            Apellido = apellido;
+            NumeroDeIdentificacion = numeroDeDocumento;
+            Edad = edad;
             Email = email;
             Telefono = telefono;
         }
         public override void MostrarInformacion(){
-            base.MostrarInformacion();
             Console.WriteLine(@$"
-            Posición: {Email}
-            Salario base: {Telefono}");
+            Id: {Id}
+            Nombre: {Nombre}
+            Apellido: {Apellido}
+            Número de Identificación: {NumeroDeIdentificacion}
+            Edad: {Edad}
+            Email: {Email}
+            Telefono: {Telefono}");
         }
     }
 }

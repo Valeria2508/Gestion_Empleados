@@ -173,7 +173,7 @@ namespace Gestion_Empleados.models
 
             if (clienteToDelete!= null)
             {
-                foreach (var cliente in ListaClientes)
+                foreach (var cliente in clienteToDelete)
                 {
                     ListaClientes.Remove(cliente);
                 }
