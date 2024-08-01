@@ -21,6 +21,7 @@ namespace Gestion_Empleados.models
             Edad = edad;
             Posicion = posicion;
             Salario = salario;
+
         }
 
         private decimal CalcularBonificacion()

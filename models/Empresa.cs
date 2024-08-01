@@ -64,6 +64,11 @@ namespace Gestion_Empleados.models
                 empleado.MostrarInformacion();
             }
         }
+        public void MostrarInformacion(){
+            
+
+        }
+        
 
         public void MostrarTodosLosClientes()
         {
