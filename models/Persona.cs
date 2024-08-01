@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 
 namespace Gestion_Empleados.models
 {
-    public class Persona
+    public abstract class Persona
     {
         // en person se agg los atributos que se le van heredar a los hijos
-        public Guid Id { get; set; }
-        public string? Nombre { get; set; }
-        public string? Apellido { get; set; }
-        public string? NumeroDeIdentificacion { get; set; }
-        public byte Edad { get; set; }
+        protected Guid Id { get; set; }
+        protected string? Nombre { get; set; }
+        protected string? Apellido { get; set; }
+        protected string? NumeroDeIdentificacion { get; set; }
+        protected byte Edad { get; set; }
 
         // se crea el metodo 
         public virtual void MostrarInformacion()
