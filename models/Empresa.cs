@@ -82,12 +82,12 @@ namespace Gestion_Empleados.models
         {
             Console.WriteLine("Ingresa el nombre del empleado a actualizar");
             string? NombreBuscar = Console.ReadLine();
-            var empleadoToUpdate = ListaEmpleados.Where(c => c.Nombre == NombreBuscar).ToList();
+            var empleadoToUpdate = ListaEmpleados.Where(c => c.GetNombre() == NombreBuscar).ToList();
             if (empleadoToUpdate.Any())// any quiere decir si es deiferente de null
             {
                 foreach (var empleado in empleadoToUpdate)
                 {
-                    Console.WriteLine($"Actualizando empleado con ID: {empleado.Id}");
+                    Console.WriteLine($"Actualizando empleado ");
 
                     Console.WriteLine("¿Qué dato desea actualizar?");
                     Console.WriteLine("1. Nombre");
@@ -104,19 +104,23 @@ namespace Gestion_Empleados.models
                     {
                         case "1":
                             Console.WriteLine("Ingrese el nuevo nombre:");
-                            empleado.Nombre = Console.ReadLine();
+                            var nuevoNombre = Console.ReadLine();
+                            empleado.SetNombre(nuevoNombre);
                             break;
                         case "2":
                             Console.WriteLine("Ingrese el nuevo apellido:");
-                            empleado.Apellido = Console.ReadLine();
+                            var nuevoApellido = Console.ReadLine();
+                            empleado.SetApellido(nuevoApellido);
                             break;
                         case "3":
                             Console.WriteLine("Ingrese el nuevo Documento:");
-                            empleado.NumeroDeIdentificacion = Console.ReadLine();
+                            var nuevoNumeroDeIdentificacion = Console.ReadLine();
+                            empleado.SetNumeroDeIdentificacion(nuevoNumeroDeIdentificacion);
                             break;
                         case "4":
                             Console.WriteLine("Ingrese el nuevo edad:");
-                            empleado.Edad = Convert.ToByte(Console.ReadLine());
+                            var nuevaEdad =Convert.ToByte( Console.ReadLine());
+                            empleado.SetEdad(nuevaEdad);
                             break;
                         case "5":
                             Console.WriteLine("Ingrese el nuevo posicion:");
@@ -128,13 +132,18 @@ namespace Gestion_Empleados.models
                             break;
                         case "7":
                             Console.WriteLine("Ingrese el nuevo nombre:");
-                            empleado.Nombre = Console.ReadLine();
+                             var nuevoNombre1 = Console.ReadLine();
+                            empleado.SetNombre(nuevoNombre1);
+
                             Console.WriteLine("Ingrese el nuevo apellido:");
-                            empleado.Apellido = Console.ReadLine();
+                            var nuevoApellido1 = Console.ReadLine();
+                            empleado.SetApellido(nuevoApellido1);
                             Console.WriteLine("Ingrese el nuevo email:");
-                            empleado.NumeroDeIdentificacion = Console.ReadLine();
+                            var nuevoNumeroDeIdentificacion1 = Console.ReadLine();
+                            empleado.SetNumeroDeIdentificacion(nuevoNumeroDeIdentificacion1);
                             Console.WriteLine("Ingrese el nuevo teléfono:");
-                            empleado.Edad = Convert.ToByte(Console.ReadLine());
+                            var nuevaEdad1 =Convert.ToByte( Console.ReadLine());
+                            empleado.SetEdad(nuevaEdad1);
                             Console.WriteLine("Ingrese el nuevo posicion:");
                             empleado.Posicion = Console.ReadLine();
                             Console.WriteLine("Ingrese el nuevo salario:");
@@ -159,7 +168,7 @@ namespace Gestion_Empleados.models
             Console.WriteLine("Ingrese el numero de ID del empleado a eliminar");
             string? IDBuscar = Console.ReadLine(); // guarda el id que se ingreso
             // busca en la lista de empleados el empleado con el id buscado y lo guarda en la coleccion empleadoToDelete
-            var empleadoToDelete = ListaEmpleados.Where(c => c.NumeroDeIdentificacion == IDBuscar).ToList();
+            var empleadoToDelete = ListaEmpleados.Where(c => c.GetNumeroDeIdentificacion() == IDBuscar).ToList();
 
             if (empleadoToDelete.Any())// any quiere decir si es deiferente de null
             {
@@ -174,7 +183,7 @@ namespace Gestion_Empleados.models
             Console.WriteLine("Ingrese el numero de ID del empleado a eliminar");
             string? IdBucar = Console.ReadLine();
 
-            var clienteToDelete = ListaClientes.Where(c => c.NumeroDeIdentificacion == IdBucar).ToList();
+            var clienteToDelete = ListaClientes.Where(c => c.GetNumeroDeIdentificacion() == IdBucar).ToList();
 
             if (clienteToDelete!= null)
             {
@@ -188,7 +197,7 @@ namespace Gestion_Empleados.models
 
         public void BuscarEmpleado(string numeroDeIdentificacion)
         {// si ingreso parametros, no pido los datos
-            var empleadoFind = ListaEmpleados.Find(e => e.NumeroDeIdentificacion == numeroDeIdentificacion);
+            var empleadoFind = ListaEmpleados.Find(e => e.GetNumeroDeIdentificacion() == numeroDeIdentificacion);
             if (empleadoFind != null)
             {
                 empleadoFind.MostrarInformacion();

@@ -22,7 +22,7 @@ while (!exit)
     switch (option)
     {
         case "1":
-            empresa1.AgregarEmpleado(empresa1.PedirDatos());
+            empresa1.AgregarEmpleado(Administrador.PedirDatos());
             empresa1.PausarMenu();
             break;
         case "2":
@@ -53,7 +53,7 @@ while (!exit)
             empresa1.PausarMenu();
             break;
         case "7":
-            empresa1.AgregarCliente(empresa1.PedirDatosCliente());
+            empresa1.AgregarCliente(Administrador.PedirDatosCliente());
             empresa1.PausarMenu();
             break;
         case"8":

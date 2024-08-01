@@ -15,14 +15,35 @@ namespace Gestion_Empleados.models
         protected byte Edad { get; set; }
 
         // se crea el metodo 
-        public virtual void MostrarInformacion()
-        {
-            Console.WriteLine(@$"
-            Id: {Id}
-            Nombre: {Nombre}
-            Apellido: {Apellido}
-            Número de Identificación: {NumeroDeIdentificacion}
-            Edad: {Edad}");
+        public abstract void MostrarInformacion();
+        // {
+        //     Console.WriteLine(@$"
+        //     Id: {Id}
+        //     Nombre: {Nombre}
+        //     Apellido: {Apellido}
+        //     Número de Identificación: {NumeroDeIdentificacion}
+        //     Edad: {Edad}");
+        // }
+
+        public string GetNombre(){
+            return Nombre;
+        }
+
+        public string GetNumeroDeIdentificacion(){
+            return NumeroDeIdentificacion;
+        }
+
+        public void SetNombre(string nuevoNombre){
+            Nombre = nuevoNombre;
+        }
+        public void SetApellido(string nuevoApellido){
+            Nombre = nuevoApellido;
+        } 
+        public void SetNumeroDeIdentificacion(string nuevoNumeroDeIdentificacion){
+            NumeroDeIdentificacion = nuevoNumeroDeIdentificacion;
+        }
+        public void SetEdad(byte nuevaEdad){
+            Edad = nuevaEdad;
         }
     }
 
