@@ -166,7 +166,18 @@ namespace Gestion_Empleados.models
         }
 
         public void EliminarCliente(){
-            
+            Console.WriteLine("Ingrese el numero de ID del empleado a eliminar");
+            string? IdBucar = Console.ReadLine();
+
+            var clienteToDelete = ListaClientes.Where(c => c.NumeroDeIdentificacion == IdBucar).ToList();
+
+            if (clienteToDelete!= null)
+            {
+                foreach (var cliente in ListaClientes)
+                {
+                    ListaClientes.Remove(cliente);
+                }
+            }
         }
         
 
