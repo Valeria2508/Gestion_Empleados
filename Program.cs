@@ -1,5 +1,6 @@
 ﻿using Gestion_Empleados.models;
 var empresa1 = new Empresa();
+
 bool exit = false;
 
 while (!exit)
@@ -11,7 +12,10 @@ while (!exit)
     Console.WriteLine("4. Eliminar un Empleado");
     Console.WriteLine("5. Buscar un Empleado");
     Console.WriteLine("6. Buscar un Empleado por cargo");
-    Console.WriteLine("7. Salir");
+    Console.WriteLine("7. Crear un nuevo Cliente");
+    Console.WriteLine("8. Eliminar un Cliente");
+    Console.WriteLine("9. Mostrar los Clientes");
+    Console.WriteLine("10. Salir");
 
     var option = Console.ReadLine();
 
@@ -49,6 +53,19 @@ while (!exit)
             empresa1.PausarMenu();
             break;
         case "7":
+            empresa1.AgregarCliente(empresa1.PedirDatosCliente());
+            empresa1.PausarMenu();
+            break;
+        case"8":
+            empresa1.EliminarCliente();
+            Console.WriteLine("El cliente se elimino con exito");
+            empresa1.PausarMenu();
+            break;
+        case "9":
+            empresa1.MostrarTodosLosClientes();
+            empresa1.PausarMenu();
+            break;
+        case "10":
             exit = true;
             break;
         default:
