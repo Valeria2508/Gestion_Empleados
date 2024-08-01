@@ -10,6 +10,7 @@ namespace Gestion_Empleados.models
         public string? Nombre { get; set; }
         public string? Direccion { get; set; }
         public List<Empleado> ListaEmpleados { get; set; } = new List<Empleado>();
+        public List<Cliente> ListaClientes { get; set; } = new List<Cliente>();
 
         public Empleado PedirDatos()
         {
@@ -28,6 +29,8 @@ namespace Gestion_Empleados.models
             var empleado1 = new Empleado(nombre, apellido, numid, edad, posicion, salario);
             return empleado1;
         }
+
+        
 
         public void AgregarEmpleado(Empleado empleado)
         {
